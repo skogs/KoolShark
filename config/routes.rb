@@ -1,4 +1,5 @@
 KoolShark::Application.routes.draw do
+  match 'test404' => 'pages#test404'
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:
