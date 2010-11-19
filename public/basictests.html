@@ -1,0 +1,86 @@
+<html>
+<Head>
+<script type="text/javascript">
+function show_alert()
+{
+alert("Hello! I am an alert box!");
+}
+function show_confirm()
+{
+var r=confirm("Press a button!");
+if (r==true)
+  {
+  alert("You pressed OK!");
+  }
+else
+  {
+  alert("You pressed Cancel!");
+  }
+}
+function show_prompt()
+{
+var name=prompt("Please enter your name","Harry Potter");
+if (name!=null && name!="")
+  {
+  document.write("Hello " + name + "! How are you today?");
+  }
+}
+</script>
+
+<style type=text/css> 
+  #box {
+     border: 5px; blue;
+     width: 200px;
+     height: 100px;
+  }
+</style>
+
+</Head>
+
+<body>
+<div id="box"> Hello </div>
+
+
+<form>
+<p>This is that first Combo box </p>
+
+<select>
+  <option>Volvo</option>
+  <option>Saab</option>
+  <option>Mercedes</option>
+  <option>Audi</option>
+</select>
+<br>
+
+<p>This is that first check box  </p>
+<input type="checkbox" name="vehicle" value="Bike" /> I have a bike<br />
+<input type="checkbox" name="vehicle" value="Car" /> I have a car 
+<br>
+
+
+<p>This is that first radio button  </p>
+<input type="radio" name="sex" value="male" /> Male<br />
+<input type="radio" name="sex" value="female" /> Female
+<br>
+<p>This is that first multi selection  </p>
+<SELECT MULTIPLE SIZE=5>
+ <OPTION VALUE="o1">Option Android
+ <OPTION VALUE="o2">Option BREWMP
+ <OPTION VALUE="o3">Option J2ME
+</SELECT>
+<br>
+<p>This is that first password entry  </p>
+Password: <input type="password" name="pwd" />
+<br>
+<input type="button" onclick="show_alert()" value="Show alert box" />
+
+<input type="button" onclick="show_confirm()" value="Show a confirm box" />
+
+<input type="button" onclick="show_prompt()" value="Show prompt box" />
+</form>
+<!--
+<p>This is first embed tag</p>
+<embed src="fs:/shared/videotest.mp4" type="video/mpeg" width="400" height="600">
+<br>!-->
+</body>
+</html>
