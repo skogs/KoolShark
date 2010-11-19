@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
 
-  USER_ID, PASSWORD = "admin", "123"
-  before_filter :basic_authenticate, :only => [ :basic_auth ]
+  USERS = { "admin" => "123" }
 
+  before_filter :digest_authenticate, :only => [ :digest_auth ]
+  before_filter :basic_authenticate,  :only => [ :basic_auth ]
+  
   def home
   end
 
@@ -14,12 +16,21 @@ class PagesController < ApplicationController
     render :text => "you successfully passed the basic auth"
   end
 
+  def digest_auth
+    render :text => "you successfully passed the basic auth"
+  end
+
 private
    def basic_authenticate
       authenticate_or_request_with_http_basic do |id, password| 
-          id == USER_ID && password == PASSWORD
+          password == USERS[id]
       end
    end
 
+   def digest_authenticate
+     authenticate_or_request_with_http_digest do |name|
+       USERS[name]
+     end
+   end
 
 end

@@ -1,6 +1,7 @@
 KoolShark::Application.routes.draw do
   match 'test404' => 'pages#test404'
   match 'basic_auth' => 'pages#basic_auth'
+  match 'digest_auth' => 'pages#digest_auth'
 
   root :to => 'pages#home'
 
