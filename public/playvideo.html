@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/javascript">
+function playPause() {
+  var myVideo = document.getElementById('video');
+  if (myVideo.paused)
+    myVideo.play();
+  else
+    myVideo.pause();
+}
+</script>
+
+</head>
+
+<body>
+<video width="320" height="240" autoplay src="http://diveintohtml5.org/i/pr6.mp4" id='video'></video>
+<br/>
+<input type=button onclick="playPause()" value="Play/Pause">
+
+</body>
+
+</html>
